@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "Animals",
+  "info": {
+    "name": "animals",
+    "description": "Animals"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "pictures": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "user": {
+      "model": "user",
+      "via": "animals",
+      "plugin": "users-permissions"
+    }
+  }
+}
